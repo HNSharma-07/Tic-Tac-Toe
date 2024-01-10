@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: grid;
+    place-items: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    z-index: -2;
+}
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: grid;
+    place-items: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    z-index: -2;
+}
+
+.circle1 {
+    position: fixed;
+    top: 5%;
+    left: 30%;
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #d84869;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    animation: circle1Animate 15s infinite;
+    z-index: -1;
+}
+
+@keyframes circle1Animate {
+    50% {
+        left: 33%;
+        top: 4%;
+        scale: 1.11;
+    }
+}
+
+.circle2 {
+    /* position: absolute; */
+    position: fixed;
+    bottom: 5%;
+    right: 30%;
+    width: 19em;
+    height: 19em;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #5648d8;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    animation: circle2Animate 8s infinite;
+    z-index: -1;
+}
+
+@keyframes circle2Animate {
+    50% {
+        bottom: 6%;
+        right: 31%;
+    }
+}
+
+.game-info {
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.5rem 3rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.tic-tac-toe {
+    width: 90%;
+    max-width: 20rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    aspect-ratio: 1/1;
+    backdrop-filter: blur(5px);
+}
+
+.box {
+    /* position: relative; */
+    width: 100%;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-rig {
+    border-right: 2px solid white;
+}
+
+.b-bot {
+    border-bottom: 2px solid white;
+}
+
+.btn {
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.btn.active {
+    display: flex;
+}
+
+.win {
+    background-color: rgba(0, 255, 0, 0.3);
+}
